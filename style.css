@@ -19,8 +19,31 @@ white #fdfdfd
     box-shadow: 4px 4px 4px #4f4f4f;
 }
 
+.calc-screen {
+    height: 125px;
+    padding: 10px;
+    display: grid;
+    justify-items: end;
+    align-items: end;
+}
+
+.calc-screen p {
+    text-align: right;
+    font-size: 4rem;
+    margin: 0;
+    margin-bottom: 25px;
+}
+
 .buttons {
     display: grid;
+    grid-template-areas:
+    "ac plus-minus precent division"
+    "seven eight nine multi"
+    "four five six minus"
+    "one two three plus"
+    "zero zero dot equal";
+    grid-gap: 7px;
+    justify-items: center;
 }
 
 .btn {
@@ -33,6 +56,12 @@ line-height: 60px;
 font-size: 1.5rem;
 cursor: pointer;
 user-select: none;
+}
+
+.btn.zero {
+grid-area: zero;
+width: 100%;
+border-radius: 34px;
 }
 
 .btn:hover {
