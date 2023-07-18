@@ -19,6 +19,10 @@ white #fdfdfd
     box-shadow: 4px 4px 4px #4f4f4f;
 }
 
+.buttons {
+    display: grid;
+}
+
 .btn {
 width: 60px;
 height: 60px;
@@ -37,6 +41,14 @@ user-select: none;
 
 .btn:active {
     filter: brightness(90%);
+}
+
+.btn.bg-grey {
+    background-color: #a6a6a6;
+}
+
+.btn.bg-orange {
+    background-color: #ff9501;
 }
 
 
