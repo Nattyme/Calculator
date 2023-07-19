@@ -87,6 +87,7 @@ if(key === '=') {
     console.log(a, b, sign);
 }
 
+// Нажата %
 if(key === '%') {
     switch (sign) {
     case '+':
