@@ -4,7 +4,7 @@ let sign = ''; // знак операции
 let finish = false;
 
 const digit = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '.'];
-const action = ['-', '+', 'x', '/'];
+const action = ['-', '+', 'X', '/'];
 
 //экран
 const out = document.querySelector('.calc-screen p');
@@ -36,6 +36,9 @@ document.querySelector('.buttons').onclick = (event) => {
         out.textContent = a;
         }
         else if (a!== '' && b!=='' && finish) {
+            b = key;
+            finish = false;
+            out.textContent = b;
 
         }
         else {
@@ -55,6 +58,9 @@ document.querySelector('.buttons').onclick = (event) => {
 
 // Нажата = 
 if(key === '=') {
+    if(b === '') {
+        b = a;
+    }
     switch (sign) {
         case '+':
             a = (+a) + (+b);
@@ -66,6 +72,13 @@ if(key === '=') {
             a = a * b;
             break;
         case "/":
+            if(b === '0') {
+                out.textContent = 'Ошибка';
+                a = '';
+                b = '';
+                sign = '';
+                return;
+            }
             a = a / b;
             break;
     }
