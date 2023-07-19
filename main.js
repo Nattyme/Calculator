@@ -87,6 +87,32 @@ if(key === '=') {
     console.log(a, b, sign);
 }
 
+if(key === '%') {
+    switch (sign) {
+    case '+':
+        a = (a * (b * 0.01)) + (+a);
+        break;
+    case  '-':
+        a = (a * (b * 0.01)) + (+a);
+        break;
+    case 'X':
+        a = a * (b * 0.01);
+        break;
+    case '/':
+        if(b === '0') {
+            out.textContent = 'Ошибка';
+            a = '';
+            b = '';
+            sign = '';
+            return;
+        }
+        a = a / (a * (b * 0.01));
+        break;
+    }
+    finish = true;
+    out.textContent = a;
+    console.log(a, b, sign);
+}
 
 }
 
